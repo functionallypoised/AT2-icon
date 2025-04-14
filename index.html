@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>
+            My website
+        </title>
+
+        <style>
+            .row{
+                width: 720px;
+                margin: 10px auto 10px auto ;
+            }
+
+            .image-container {
+                display: table-cell;
+                vertical-align: middle;
+                padding: 20px;
+            }
+        </style>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
+    </head>
+
+<body style="background-color: lightblue;">
+    <h1>
+        a test of icon AV implementation
+    </h1>
+    <p></p>
+    
+    <div class="row">
+        <div class="image-container"><img id="icon1" src="imgs/icon_AUDIO-1.png" onmousedown="this.src='imgs/icon_AUDIO-2.png';" onmouseup="this.src='imgs/icon_AUDIO-1.png'" width="50"/></div>
+        <div class="image-container"><img id="icon2" src="imgs/icon_AUDIO-1.png" onmouseover="this.src='imgs/icon_HEALTH-2.png';" onmouseout="this.src='imgs/icon_AUDIO-1.png'" width="50"/></div>
+        <div class="image-container"><img id="icon3" src="imgs/icon_AUDIO-1.png" onmouseover="this.src='imgs/icon_PREFERENCE-2.png';" onmouseout="this.src='imgs/icon_AUDIO-1.png'" width="50"/></div>
+    </div>
+
+    <div class="row">
+        <div class="image-container"></div><img id="icon1" src="imgs/icon_HEALTH-1.png" onmousedown="this.src='imgs/icon_HEALTH-2.png';" onmouseup="this.src='imgs/icon_HEALTH-1.png'" width="50"/></div>
+        <div class="image-container"></div><img id="icon2" src="imgs/icon_HEALTH-1.png" onmouseover="this.src='imgs/icon_HEALTH-2.png';" onmouseout="this.src='imgs/icon_HEALTH-1.png'" width="50"/></div>
+        <div class="image-container"></div><img id="icon3" src="imgs/icon_HEALTH-1.png" onmouseover="this.src='imgs/icon_HEALTH-2.png';" onmouseout="this.src='imgs/icon_HEALTH-1.png'" width="50"/></div>
+    </div>
+
+    <div class="row">
+        <div class="image-container"></div><img id="icon1" src="imgs/icon_PREFERENCE-1.png" onmousedown="this.src='imgs/icon_PREFERENCE-2.png';" onmouseup="this.src='imgs/icon_PREFERENCE-1.png'" width="50"/></div>
+        <div class="image-container"></div><img id="icon2" src="imgs/icon_PREFERENCE-1.png" onmouseover="this.src='imgs/icon_PREFERENCE-2.png';" onmouseout="this.src='imgs/icon_PREFERENCE-1.png'" width="50"/></div>
+        <div class="image-container"></div><img id="icon3" src="imgs/icon_PREFERENCE-1.png" onmouseover="this.src='imgs/icon_PREFERENCE-2.png';" onmouseout="this.src='imgs/icon_PREFERENCE-1.png'" width="50"/></div>
+    </div>
+
+
+</style>
+    <script>
+        var sound1 = new buzz.sound("audio/MOUSE-CLICK.wav");
+        var sound2 = new buzz.sound("audio/PEN-CLICK.wav");
+        var sound3 = new buzz.sound("audio/PHONE-HOOK.wav");
+        var sound4 = new buzz.sound("audio/Electrical switch.wav");
+
+        window.onload = function() {
+            document.getElementById('icon1').addEventListener('click', function () {sound1.play();});
+            document.getElementById('icon2').addEventListener('click', function () {sound2.play();});
+            document.getElementById('icon3').addEventListener('click', function () {sound3.play();});
+
+            document.getElementById('icon1').addEventListener('mouseover', function () {sound4.play();});
+            document.getElementById('icon2').addEventListener('mouseover', function () {sound4.play();});
+            document.getElementById('icon3').addEventListener('mouseover', function () {sound4.play();});
+        };
+    </script>
+
+</body>
+
+</html>
